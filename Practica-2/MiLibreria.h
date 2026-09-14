@@ -71,6 +71,19 @@ namespace MiLibreria{
     //-------------------------------------------
 
 
+    // Ejercicio 14
+
+    const int N = 5;
+
+    void llenarMatriz(int *matriz);
+
+    void imprimirMatriz(const int *matriz);
+
+    void rotar90(const int *origen, int *destino);
+
+    // ---------------------------------------------
+
+
 }
 
 #endif // MILIBRERIA_H

@@ -170,6 +170,43 @@ int main(){
 
         }
 
+        case 14:{
+
+            int original[N * N];
+
+            int rotada90[N * N];
+
+            int rotada180[N * N];
+
+            int rotada270[N * N];
+
+            llenarMatriz(original);
+
+            cout << "Matriz original:" << endl;
+
+            imprimirMatriz(original);
+
+            rotar90(original, rotada90);
+
+            rotar90(rotada90, rotada180);
+
+            rotar90(rotada180, rotada270);
+
+            cout << endl << "Matriz rotada 90 grados:" << endl;
+
+            imprimirMatriz(rotada90);
+
+            cout << endl << "Matriz rotada 180 grados:" << endl;
+
+            imprimirMatriz(rotada180);
+
+            cout << endl << "Matriz rotada 270 grados:" << endl;
+
+            imprimirMatriz(rotada270);
+
+            break;
+        }
+
         default:
 
             cout << "Ese ejercicio no existe." << endl;

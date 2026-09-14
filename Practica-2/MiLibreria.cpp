@@ -341,6 +341,55 @@ bool esCuadradoMagico(const int *matriz, int n){
 
 }
 
+void llenarMatriz(int *matriz){
 
+    int valor = 1;
+
+    for (int fila = 0; fila < N; ++fila){
+
+        for (int columna = 0; columna < N; ++columna){
+
+            int *ptrCelda = (matriz + fila * N + columna);
+
+            *ptrCelda = valor;
+
+            valor++;
+        }
+    }
+}
+
+void imprimirMatriz(const int *matriz){
+
+    for (int fila = 0; fila < N; ++fila){
+
+        for (int columna = 0; columna < N; ++columna){
+
+            const int *ptrCelda = (matriz + fila * N + columna);
+
+            cout << *ptrCelda << "\t";
+
+
+        }
+
+        cout << endl;
+    }
+}
+
+void rotar90(const int *origen, int *destino){
+
+    for (int i = 0; i < N; ++i){
+
+        for (int j = 0; j < N; ++j){
+
+            const int *ptrOrigen = (origen + (N - 1 - j) * N + i);
+
+            int *ptrDestino = (destino + i * N + j);
+
+            *ptrDestino = *ptrOrigen;
+
+
+        }
+    }
+}
 
 }
