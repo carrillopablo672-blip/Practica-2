@@ -207,6 +207,39 @@ int main(){
             break;
         }
 
+        case 16:{
+
+            int n = 0;
+
+            cout << "Ingrese el tamano de la malla (n): ";
+
+            cin >> n;
+
+            if (n <= 0 || 2 * n >= MAX_FILAS){
+
+                cout << "El valor de n debe estar entre 1 y " << (MAX_FILAS / 2 - 1) << "." << endl;
+
+                return 0;
+
+            }
+
+            long long pascal[MAX_FILAS * MAX_FILAS];
+
+            construirPascal(pascal);
+
+            long long caminos = calcularCaminos(pascal, n);
+
+            cout << "Para una malla de " << n << "x" << n << " puntos hay " << caminos << " caminos." << endl;
+
+            break;
+
+        }
+
+        case 18:{
+
+
+        }
+
         default:
 
             cout << "Ese ejercicio no existe." << endl;

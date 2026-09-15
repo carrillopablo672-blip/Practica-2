@@ -83,7 +83,15 @@ namespace MiLibreria{
 
     // ---------------------------------------------
 
+    //Ejercicio 16
 
+    const int MAX_FILAS = 61;
+
+    void construirPascal(long long *pascal);
+
+    long long obtenerCombinacion(const long long *pascal, int fila, int columna);
+
+    long long calcularCaminos(const long long *pascal, int n);
 }
 
 #endif // MILIBRERIA_H

@@ -341,6 +341,10 @@ bool esCuadradoMagico(const int *matriz, int n){
 
 }
 
+//------------------------------------------------------------
+
+//Ejercicio 16
+
 void llenarMatriz(int *matriz){
 
     int valor = 1;
@@ -391,5 +395,53 @@ void rotar90(const int *origen, int *destino){
         }
     }
 }
+
+void construirPascal(long long *pascal){
+
+    for (int fila = 0; fila < MAX_FILAS; ++fila){
+
+        for (int columna = 0; columna <= fila; ++columna){
+
+            long long *ptrCelda = (pascal + fila * MAX_FILAS + columna);
+
+            if (columna == 0 || columna == fila){
+
+                *ptrCelda = 1;
+
+            }
+            else{
+
+                // Cada valor es la suma de los dos que estan encima
+
+                 const long long *ptrIzquierda = (pascal + (fila - 1) * MAX_FILAS + (columna - 1));
+
+                 const long long *ptrDerecha   = (pascal + (fila - 1) * MAX_FILAS + columna);
+
+                 *ptrCelda = *ptrIzquierda + *ptrDerecha;
+
+
+            }
+        }
+    }
+}
+
+long long obtenerCombinacion(const long long *pascal, int fila, int columna){
+
+    const long long *ptrCelda = (pascal + fila * MAX_FILAS + columna);
+
+    return *ptrCelda;
+
+}
+
+long long calcularCaminos(const long long *pascal, int n){
+
+    return obtenerCombinacion(pascal, 2 * n, n);
+}
+
+//--------------------------------------------------------------------
+
+//Ejercicio 18
+
+
 
 }
